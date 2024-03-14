@@ -1,1 +1,102 @@
-
+.content{
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+.about-proj p{
+    position: absolute;
+    color: white;
+    top: 100px;
+    font-size: 24px;
+    left: 12%;
+}
+.about-proj div{
+    width: 48%;
+    position: absolute;
+    color: white;
+    top: 180px;
+    font-size: 16px;
+    left: 12%;
+}
+.about-prog-bg{
+    position: absolute;
+    width: 58%;
+    height: 200px;
+    background-color: rgba(161, 158, 168, 0.5);
+    z-index: -1;
+    top: 100px;
+    left: 6%;
+    border: 2px rgba(48, 27, 90, 0.5) solid;
+    border-radius: 20px;
+}
+ .contact_us_title{
+    position: absolute;
+    color: white;
+    top: 100px;
+    font-size: 24px;
+    left: 70%;
+} 
+.about-proj-mail div{
+    width: 48%;
+    position: absolute;
+    color: white;
+    top: 200px;
+    font-size: 24px;
+    left: 70%;
+    cursor: pointer;
+}
+.about-prog-mail-bg{
+    position: absolute;
+    width: 25%;
+    height: 200px;
+    background-color: rgba(161, 158, 168, 0.5);
+    z-index: -1;
+    top: 100px;
+    left: 68%;
+    border: 2px rgba(48, 27, 90, 0.5) solid;
+    border-radius: 20px;
+}
+.mail{
+    position: absolute;
+    color: white;
+    top: 150px;
+    font-size: 22px;
+    left: 70%;
+}
+.dev-title{
+    position: absolute;
+    color: white;
+    top: 350px;
+    font-size: 24px;
+    left: 10%;  
+}
+.developers-box{
+    position: absolute;
+    top: 440px;
+    left: 5%;
+    color: white;
+    display: flex;
+}
+.developers-box div{
+    width: 300px;
+    display: flex;
+    margin-right: 10%;
+}
+.developers-box div div{
+    width: 300px;
+    display: block;
+}
+.img{
+    margin: 10px;
+}
+.name{
+    font-size: 20px;
+}
+.dev-info{
+    font-size: 18px;
+}
+.user-name:hover {
+    text-decoration: underline;
+}
