@@ -1,1 +1,576 @@
+/* bg image */
+.bg-image{
+    width: 100%;
+    height: 1029px;
+    left: 0px;
+    top: 0px; 
+    position: fixed;
+    filter: blur(2px);
+}
 
+/* left navbar */
+
+.left-navbar-container{
+    width: 265px; 
+    height: 949px;
+    left: 0px; 
+    top: 80px; 
+    position: fixed;
+
+}
+.left-navbar-container-bground{
+    width: 265px; 
+    height: 949px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: rgba(0, 0, 0, 0.85)
+}
+.left-navbar{
+    width: 200px; 
+    height: 446px; 
+    left: 32px; 
+    top: 39px; 
+    position: absolute
+}
+.left-navbar a{
+    left: 2px;
+    position: absolute; 
+    color: white; 
+    font-size: 14px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    text-decoration: none;
+}
+.left-navbar a:hover{
+    text-decoration: underline;
+}
+.left-navbar-title{
+    position: absolute; 
+    color: #A1A1A1; 
+    font-size: 12px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+/* second navbar */
+.second-navbar-container{
+    padding-top: 14px; 
+    padding-left: 53px; 
+    left: 211px; 
+    top: 65px; 
+    position: fixed; 
+    justify-content: flex-end; 
+    align-items: center; 
+    display: inline-flex;
+    z-index: 1000;
+}
+.second-navbar{
+    width: 1176px; 
+    height: 66px; 
+    position: relative;
+
+}
+.second-navbar-bg{
+    width: 110%; 
+    height: 66px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: rgba(255, 243, 94, 0.85); 
+    border: 1px black solid;
+
+}
+.second-navbar-address{
+    width: 275px; 
+    height: 19px; 
+    left: 188px; 
+    top: 23px; 
+    position: absolute
+}
+.home-icon{
+    width: 17px; 
+    height: 18px; 
+    left: 0px; 
+    top: 1px; 
+    position: absolute
+}
+.arrow-icon{
+    width: 25px; 
+    padding-left: 20px; 
+    position: absolute;
+}
+.second-navbar-head{
+    left: 50px;
+    position: absolute; 
+    color: #020202; 
+    font-size: 14px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.second-navbar-chapter{
+    left: 181px;
+    position: absolute; 
+    color: #020202; 
+    font-size: 14px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.second-navbar-date{
+    width: 162px; 
+    height: 19px; 
+    left: 751px; 
+    top: 23px; 
+    position: absolute
+}
+.calendar-icon{
+    width: 17px; 
+    height: 17px; 
+    left: 0px; 
+    top: 2px; 
+    position: absolute
+}
+.date{
+    left: 23px; 
+    top: 0px; 
+    position: absolute; 
+    color: black; 
+    font-size: 14px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+/*  */
+.info-container{
+    width: 1133px; 
+    left: 280px; 
+    position: absolute;
+}
+.info-box{
+    width: 750px; 
+    height: 375px; 
+    left: 192px; 
+    top: 70px; 
+    position: absolute;
+    border: 1px #838383 solid;
+    border-radius: 20px;
+}
+.info-title{
+    text-align: center;
+    color: black; 
+    font-size: 26px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.info{
+    width: 702px; 
+    left: 24px; 
+    top: 55px; 
+    position: absolute; 
+    color: black; 
+    font-size: 18px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.part-title{
+    left: 24px; 
+    top: 137px; 
+    position: absolute; 
+    color: black; 
+    font-size: 23px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.info2{
+    color: black; 
+    font-size: 18px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400;
+    word-wrap: break-word
+}
+/*  */
+.i-box{
+    width: 813px; 
+    height: auto; 
+    left: 133px; 
+    top: 484px; 
+    position: absolute;
+}
+.first-i-box{
+    width: 429px; 
+    height: 237px; 
+    position: absolute;
+    background-color:#509ACB; 
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 5px 5px 5px 3px rgb(72, 71, 71);
+}
+.second-i-box{
+    width: 343px; 
+    left: 400px; 
+    top: 160px; 
+    position: absolute; 
+    color: white; 
+    font-size: 18px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word; 
+    background-color:#509ACB; 
+    padding: 20px;
+    border-radius: 10px; 
+    z-index: 1;
+    box-shadow: 5px 5px 5px 3px rgb(72, 71, 71);
+
+}
+.i-icon{
+    width: 28px; 
+    height: 28.90px; 
+    left: 29px; 
+    top: 35px; 
+    position: absolute
+}
+.first-i-box-title{
+    width: 261px; 
+    height: 24.77px; 
+    left: 69px; 
+    top: 35px; 
+    position: absolute; 
+    color: white; 
+    font-size: 18px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.first-i-box-info{
+    width: 366px; 
+    height: 99px; 
+    left: 32px; 
+    top: 65px; 
+    position: absolute; 
+    color: white; 
+    font-size: 18px;
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.second-i-box-info{
+    color: white; 
+    font-size: 18px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400;
+    word-wrap: break-word
+}
+.second-title{
+    width: 730px; 
+    left: 226px; 
+    top: 1873px; 
+    position: absolute; 
+    color: black; 
+    font-size: 24px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.min-info-container{
+    width: 479px; 
+    height: 192px; 
+    left: 128px; 
+    top: 1938px; 
+    position: absolute
+}
+.arrow-icon-right{
+    width: 46px; 
+    left: 46px;
+    
+}
+.min-info-box{
+    width: 395px;
+    left: 340px; 
+    position: absolute; 
+    color: black; 
+    font-size: 18px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    border-radius: 15px; 
+    border: 1px black solid;
+    padding: 15px;
+}
+.arrows-line{
+    width: 675px; 
+    height: 0px; 
+    left: 47.50px; 
+    top: -8px; 
+    position: absolute; 
+    transform: rotate(90deg); 
+    transform-origin: 0 0; 
+    border: 3px black solid
+}
+.arrows-box{
+    width: 47.50px; 
+    height: 689px; 
+    left: 816px; 
+    top: 2524px; 
+    position: absolute
+}
+.red-info-box{
+    width: 656px; 
+    left: 240px; 
+    top: 3385px; 
+    position: absolute; 
+    color: black; 
+    font-size: 18px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word; 
+    border-radius: 15px; 
+    border: 1px #FF0000 solid; 
+    padding: 15px;
+}
+
+/* comments */
+
+.before-comments{
+    width: 315px; 
+    height: 51px; 
+    left: 15%; 
+    top: 7540px; 
+    position: absolute; 
+    padding-left: 660px;
+    color: black; 
+    font-size: 20px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.comments-box{
+    width: 315px; 
+    height: 51px; 
+    left: 20%; 
+    top: 7000px; 
+    position: absolute
+}
+.comments{
+    width: 205.02px; 
+    left: 0px; 
+    top: 32px; 
+    position: absolute; 
+    color: white; 
+    font-size: 14px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.comments-title{
+    width: 267.12px; 
+    left: 47.31px; 
+    top: 560px; 
+    position: absolute; 
+    color: black; 
+    font-size: 20px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.comments-input-box{
+    width: 781.63px; 
+    height: 98.50px; 
+    left: 7.89px; 
+    top: 100.31px;
+    position: absolute
+}
+.comments-input{
+    width: 660px; 
+    padding: 15px; 
+    left: 57.17px; 
+    top: 24.75px; 
+    position: absolute; 
+    background: white; 
+    border-radius: 10px; 
+    border: 3px rgb(118, 116, 116) solid
+}
+.user-icon{
+    width: 44.36px; 
+    height: 48.10px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #5EA8FF; 
+    border-radius: 5px; 
+    text-align: center; 
+    font-size: 42px;
+}
+.comments-write-box{
+    width: 781.63px; 
+    height: 98.50px; 
+    left: 10%px; 
+    top: 100.31px; 
+    position: absolute
+}
+.good{
+    width: 42px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    color: #C63131; 
+    font-size: 16px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.new{
+    width: 47px; 
+    left: 46.95px; 
+    top: -0px;
+    position: absolute; 
+    color: #4056A2; 
+    font-size: 16px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.old{
+    width: 37.46px; 
+    left: 95.61px; 
+    top: 0px; 
+    position: absolute; 
+    color: #4056A2; 
+    font-size: 16px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.comments-link-box{
+    width: 133.06px; 
+    height: 22px;
+    left: 74%; 
+    top: 7750px; 
+    position: absolute
+}
+.text-box{
+    width: 702px; 
+    left: 51px; 
+    top: 3776px; 
+    position: absolute; 
+    color: black; 
+    font-size: 18px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    border-radius: 15px; 
+    border: 1px black solid;
+    padding: 15px;
+}
+.black-line{
+    width: 268px; 
+    height: 0px; 
+    left: 47.50px; 
+    top: 0px; 
+    position: absolute; 
+    transform: rotate(90deg); 
+    transform-origin: 0 0; 
+    border: 3px black solid
+}
+.script-icon{
+    width: 108px; 
+    height: 106.81px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute
+}
+.script-icon-name{
+    width: 104px; 
+    height: 23.74px; 
+    left: 4px; 
+    top: 113.73px; 
+    position: absolute; 
+    color: black; 
+    font-size: 18px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.script-info{
+    /* width: 297px;  */
+    height: 118.68px; 
+    left: 31px; 
+    top: 5px; 
+    position: absolute; 
+    text-align: justify; 
+    color: black; 
+    font-size: 18px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word; 
+    background: white; 
+    border-radius: 10px; 
+    border: 2px black solid;
+    padding: 15px;
+}
+.script-info-box{
+    width: 445px; 
+    height: 162.19px; 
+    left: 427px;
+    top: 6212.34px; 
+    position: absolute
+}
+.script-arrow{
+    position: relative;
+    width: 50px;
+    padding-top: 0px;
+    top: -24px;
+    left: -100px;
+}
+.summary-box{
+    width: 732px; 
+    height: 369px; 
+    left: 201px; 
+    top: 7100px; 
+    position: absolute
+}
+.summary{
+    width: 213px; 
+    left: 230px; 
+    top: 29px; 
+    position: absolute; 
+    color: white; 
+    font-size: 36px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word; 
+    background: #509ACB; 
+    box-shadow: -9px 9px 4px rgba(0, 0, 0, 0.65); 
+    border-radius: 10px;
+    padding: 15px;
+}
+.summary-info{
+    width: 700px; 
+    left: 21px; 
+    top: 152px; 
+    position: absolute; 
+    color: white; 
+    font-size: 18px; 
+    font-family: Noto Sans Armenian; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    background: #509ACB; 
+    box-shadow: 9px 9px 4px rgba(0, 0, 0, 0.65); 
+    border-radius: 10px;
+    padding: 15px;
+}
+.comments-link-container{
+    width: 100%; 
+    height: 100%; 
+    position: relative
+}
+.user-name:hover {
+    text-decoration: underline;
+}
