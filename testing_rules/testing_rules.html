@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+    <link rel="stylesheet" href="testing_rules.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="nav">
+        <img class="js-logo" src="../images/JS_logo.png" />
+            <a class="links" href="../main/main.html">Գլխավոր</a href="">
+            <a class="links  main-page" style="left: 550px;" href="#">Թեստեր</a href="">
+            <a class="links" style="left: 750px;" href="../about_us/about_us.html">Մեր մասին</a href="">
+            <img class="earth-icon" src="../images/icons8-earth-50.png" />
+            <div class="earth-text">AM</div>
+            <div class="nav-line"></div>
+            <div style="width: 36px; height: 39px; left: 1130px; top: 24px; position: absolute">
+                <img src="../images/icons8-search-30 (2).png" class="search-icon" alt="">
+            </div>
+            <div class="open-user"></div>
+            <!-- user window open -->
+            <div class="user-window">
+                <img class="tringle-icon" src="../images/icons8-triangle-40.png" alt="" srcset="">
+                <img class="user-icon" src="../images/male_user.png" alt="" srcset="">
+                <p class="user-name">Անուն Ազգանուն</p>
+                <span>120 <img class="user-img" src="../images/icons8-star-96.png" alt="" srcset=""></span>
+                <button class="log-out-user">Դուրս գալ</button>
+                <img class="settings-icon" src="../images/icons8-settings-50.png" alt="" srcset="">
+            </div>
+    </div>  
+    
+    <div class="content">
 
+        <div class="test-title">Եկեք պատրաստվենք հարցազրույցի :)</div>
+
+        <hr class="first-hr">
+
+        <div class="rules-box">
+            <ol>
+                <li>Դուք ունեք սահմանված ժամանակ յուրաքանչյուր հարցի համար,</li>
+                <li>Պատասխանն ընտրելուց հետո, պատասխանը փոխել հնարավոր չէ,</li>
+                <li>Դուք չէք կարող միարժամանակ ընտրել մի քանի ճիշտ պատասխան,</li>
+                <li>Յուրաքանչյուր հարցի համար ստանում եք միավոր,</li>
+                <li>Թեստավորման ընթացքում դուրս գալու դեպքում՝ միավորները կզրոյացվեն</li>
+            </ol>
+        </div>
+        
+        <button class="go">Առաջ</button>
+
+        <script>
+            let goButton = document.querySelector('.go')
+
+            goButton.addEventListener('click',()=>{
+                window.location.href = '../testing_page/testing_page.html'
+            })
+        </script>
+    </div>
+    
+    <script src="../functions.js"></script>
+</body>
+</html>
