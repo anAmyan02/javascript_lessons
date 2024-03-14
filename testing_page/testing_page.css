@@ -1,1 +1,190 @@
+.content{
+    position: absolute;
+    margin-left: 20%;
+    top: 18%;
+    width: 937px; 
+    height: 640px; 
+    background: rgb(213, 221, 221); 
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 10px rgb(255, 255, 255);
+}
+.timer-title{
+    left: 20px; 
+    top: 7px; 
+    position: absolute; 
+    color: white; 
+    font-size: 24px; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.timer{
+    width: 62px; 
+    height: 33px; 
+    left: 127px;    
+    top: 5px; 
+    position: absolute; 
+    background: #0A1D2C; 
+    color: white;
+    border-radius: 12px;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 3%;
+}
+.timer-back{
+    width: 195px; 
+    height: 50px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #487292; 
+    border-radius: 15px
+}
+.timer-box{
+    width: 100%; 
+    height: 100%; 
+    position: relative;
+    left: 72%;
+    top: 3%;
+}
+.test-title{
+    position: absolute;
+    font-size: 24px;
+    top:5% ;
+    left: 10%;
+}
+.first-hr{
+    position: absolute;
+    width: 99.8%;
+    top: 80px;
+}
+.questions{
+    position: absolute;
+    top: 110px;
+    width: 500px;
+    height: 50px;
+    left: 20%;
+    font-size: 24px;
+}
+.answer{
+    width: 500px;
+    height: 50px;
+    position: absolute;
+    top: 180px;
+    left: 20%;
+    font-size: 16px;
+    border: 4px black solid;
+    border-radius: 10px;
+    padding: 10px 10px 0px 10px;
+}
+.answer:hover{
+    border: 3px rgb(214, 182, 36) solid;
+    box-shadow: 0px 0px 5px 5px rgb(199, 158, 10);
+    /* box-shadow: 0px 0px 5px 5px rgb(236, 69, 14); */
 
+}
+.count-of-answers{
+    position: absolute;
+    font-size: 24px;
+    top: 560px;
+    left: 44%
+}
+.next-btn{
+    position: absolute;
+    top: 550px;
+    padding: 10px 20px 10px 20px;
+    left: 68%;
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    border-radius: 15px;
+}
+.went-btn{
+    position: absolute;
+    top: 550px;
+    padding: 10px 20px 10px 20px;
+    left: 15%;
+    background-color: #487292;
+    color: white;
+    font-size: 18px;
+    border-radius: 15px;
+}
+.start-box{
+    position: absolute;
+    top: 160px;
+    left: 21.5%;
+    width: 500px;
+    height: 200px;
+    background-color: #7e9bb1;
+    border-radius: 15px;
+    padding-top: 140px;
+    text-align: center;
+    filter: blur(0.8px);
+    border: 2px #0A1D2C solid;
+    opacity: 0.96;
+}
+.start-box-title{
+    position: absolute;
+    top: 230px;
+    left: 33%;
+    font-size: 46px;
+}
+.start-btn{
+    position: absolute;
+    top: 360px;
+    left: 43%;
+    font-size: 24px;
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+    background-color: rgb(205, 201, 201);
+}
+.end-box{
+    position: absolute;
+    top: 310px;
+    left: 33%;
+    width: 500px;
+    height: 200px;
+    background-color: #62788a;
+    border-radius: 15px;
+    padding-top: 140px;
+    text-align: center;
+    filter: blur(0.8px);
+    border: 2px #0A1D2C solid;
+    opacity: 0.96;
+}
+.end-box-title{
+    position: absolute;
+    top: 370px;
+    left: 44%;
+    font-size: 50px;
+    color: white;
+}
+.end-min-title{
+    position: absolute;
+    top: 450px;
+    left: 38%;
+    font-size: 24px;
+    color: white;
+}
+.end-went-btn{
+    position: absolute;
+    top: 520px;
+    padding: 10px 20px 10px 20px;
+    left: 39%;
+    background-color: #487292;
+    color: white;
+    font-size: 18px;
+    border-radius: 15px;
+}
+.end-start-btn{
+    position: absolute;
+    top: 520px;
+    left: 50%;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+    background-color: green;
+    color: white;
+}
+.user-name:hover {
+    text-decoration: underline;
+}
