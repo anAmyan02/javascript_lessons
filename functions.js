@@ -66,9 +66,8 @@ logOut.addEventListener('click', ()=>{
 //-------------------------------------------- go to user page --------------------------------------------
 
 let userName = document.querySelector('.user-name')
-// console.log(userName)
 userName.addEventListener('click', ()=>{
-    window.location.href = '../user_page/user_page.html'
+    window.location.href = '../user_page/user_page.php'
 })
 
 //-------------------------------------------- search logic --------------------------------------------
@@ -84,3 +83,37 @@ const searchLogic = () => {
         })
     }
 }
+
+// --------------------------------- comments input is clicked ---------------------------------------------
+
+let commWrietBox = document.querySelector('.comments-write-box')
+let commentsInput = document.querySelector('.comments-input')
+
+commentsInput.addEventListener('click', () => {
+    let comBtn = document.querySelector('.com-btn')
+    comBtn.style.display = 'block'
+    let newCommentInputStyle = {
+        height: '90px',
+    };
+    let linksNewStyle = {
+        top: '60px'
+    };
+    let comHrStyle = {
+        position: 'absolute',
+        top: '100px',
+        left: '80px',
+        width: '600px'
+    };
+    Object.assign(commentsInput.style, newCommentInputStyle);
+    Object.assign(goodCom.style, linksNewStyle);
+    Object.assign(newCom.style, linksNewStyle);
+    Object.assign(oldCom.style, linksNewStyle);
+
+    commWrietBox.style.position = 'absolute';
+
+    
+    let comHr = document.createElement('hr');
+    commWrietBox.appendChild(comHr);
+    Object.assign(comHr.style, comHrStyle);
+});
+
