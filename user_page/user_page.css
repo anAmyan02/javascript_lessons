@@ -9,16 +9,18 @@
     width: 110px;
 }
 .user-name{
+    width: 150px;
     position: absolute;
     top: 110px;
     left: -7%;
     color: white;
     font-size: 18px;
+    text-align: center;
 }
 .user-name:hover {
     text-decoration: underline;
 }
-.write-user{
+/* .write-user{
     position: absolute;
     top: 150%;
     left: 6%;
@@ -26,4 +28,13 @@
     border-radius: 10px;
     color: white;
     background-color: green;
+} */
+.min-navbar{
+    width: 500px;
+    height: 100px;
+    /* background-color: aliceblue; */
+    position: absolute;
+    top: 150px;
+    left: 39%;
+
 }
