@@ -1,0 +1,34 @@
+/* light-mode.css */
+.back-img {
+    filter: brightness(100%);
+}
+
+.box {
+    background: #5B0E12;
+    border: 1px #FF0000 solid;
+}
+
+.before-comments {
+    color: white;
+}
+
+.comments-title,
+.comments {
+    color: white;
+}
+
+.comment-details {
+    color: white;
+}
+
+.likes-box {
+    color: white;
+}
+
+.likes-box .likes {
+    src: "../images/main/like.png";
+}
+
+.comm-container {
+    top: 5400px;
+}
