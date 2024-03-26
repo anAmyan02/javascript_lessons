@@ -67,7 +67,7 @@
             <div class="circle"></div>
         </div>
         
-        <img class="eye-image" src="images/icons8-closed-eye-64.png" />
+        <img class="eye-image" src="../images/icons8-eyes-32.png" />
     </div>
 
         <script>
@@ -119,26 +119,9 @@
         }
 ?>
 
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Check if the statistic window should be shown
-        <?php
-        // if($showStatisticWindow):
-             ?>
-        const statisticWindow = document.querySelector('.statistic_window');
-        statisticWindow.classList.add('show');
-
-        // Close the statistic window after 5 seconds
-        setTimeout(() => {
-            statisticWindow.style.display = 'none';
-        }, 5000);
-        <?php
-        //  endif; 
-        ?>
-    });
-    </script> -->
 
 
+<script src="login.js"></script>
 </body>
 </html>
 
