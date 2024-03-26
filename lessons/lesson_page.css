@@ -340,9 +340,9 @@
 .before-comments{
     width: 315px; 
     height: 51px; 
+    position: absolute; 
     left: 15%; 
     top: 7540px; 
-    position: absolute; 
     padding-left: 660px;
     color: black; 
     font-size: 20px; 
@@ -351,18 +351,19 @@
     word-wrap: break-word
 }
 .comments-box{
+
+    position: absolute;
     width: 315px; 
     height: 51px; 
     left: 20%; 
     top: 7000px; 
-    position: absolute
 }
 .comments{
-    width: 205.02px; 
+    /* width: 205.02px;  */
     left: 0px; 
-    top: 32px; 
+    top: 590px; 
     position: absolute; 
-    color: white; 
+    color: #020202;
     font-size: 14px; 
     font-family: Noto Sans Armenian; 
     font-weight: 400; 
@@ -573,4 +574,53 @@
 }
 .user-name:hover {
     text-decoration: underline;
+}
+
+
+/* written comments */
+
+.comm-container{
+    color: black;
+    width: 600px;
+    height: 500px;
+    position: absolute;
+    top: 8050px;
+    left:40%;
+    padding: 20px;
+
+}
+
+.com-username {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #5EA8FF;
+}
+
+.comment-details {
+    margin-bottom: 10px;
+}
+
+.com-time {
+    font-size: 14px;
+    color: #777;
+}
+
+.com-comment {
+    margin-top: 5px;
+}
+
+.likes-box{
+    display: flex;
+}
+
+.likes {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.like-count{
+    margin: 0%;
+    padding: 0%;
 }
