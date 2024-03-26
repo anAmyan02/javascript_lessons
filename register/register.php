@@ -60,8 +60,8 @@
                             <label for="r_email"><div>Էլ․հասցե</div></label>
                             <input class="name-input" type="email" placeholder="Էլ․հասցե" id="r_email" name="r_email" required>
                             <label><div>Գաղտնաբառ</div></label>
-                            <input type="password" class="name-input" placeholder="Գաղտնաբառ" id="r_password" name="r_password" required><br><br>
-                            <img class="eye-image" src="images/icons8-closed-eye-64.png" />
+                            <input type="password" class="name-input pass-input" placeholder="Գաղտնաբառ" id="r_password" name="r_password" required><br><br>
+                            <img class="eye-image" src="../images/icons8-eyes-32.png" />
                             <div id="error_massage" style="display:none;color:red;">Մուտքագրե՛ք բոլոր դաշտերը</div>
                             <input type="submit" value="Գրանցվել" name="insert" class="btn">
                         </form>
@@ -75,6 +75,8 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script>
+    <script src="../login/login.js"></script>
+
 </body>
 </html>
 <?php
@@ -120,4 +122,6 @@ function insert($data) {
 
     mysqli_close($conn); 
 }  
+
+
 ?>
