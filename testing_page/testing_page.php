@@ -1,100 +1,93 @@
+<?php
+session_start(); 
+
+if(!isset($_SESSION['username'])) {
+    header("Location: ../login/login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing</title>
-    <link rel="stylesheet" href="testing_page.css">
+    <title>testing</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="testing_page.css">
 </head>
 <body>
-    
-    <form class="content" action="" method="POST">
+    <div class="nav">
+        <img class="js-logo" src="../images/JS_logo.png" />
+            <a class="links" href="../main/index.php">Գլխավոր</a href="">
+            <a class="links  main-page" style="left: 550px;" href="#">Թեստեր</a href="">
+            <a class="links" style="left: 750px;" href="../about_us/about_us.html">Մեր մասին</a href="">
+            <img class="earth-icon" src="../images/icons8-earth-50.png" />
+            <div class="earth-text">AM</div>
+            <div class="nav-line"></div>
+            <div style="width: 36px; height: 39px; left: 1130px; top: 24px; position: absolute">
+                <img src="../images/icons8-search-30 (2).png" class="search-icon" alt="">
+            </div>
+            <div class = "mode">
+                <img src="../images/moon.png" class="sun-icon" alt="">
+            </div>
+            <div class="open-user"></div>
+            <!-- user window open -->
+            <div class="user-window">
+                <img class="tringle-icon" src="../images/icons8-triangle-40.png" alt="" srcset="">
+                <img class="user-icon" src="../images/male_user.png" alt="" srcset="">
+                <p class="user-name"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?></p>
+                <span>120 <img src="../images/icons8-star-96.png" alt="" srcset=""></span>
+                <button class="log-out-user">Դուրս գալ</button>
+                <img class="settings-icon" src="../images/icons8-settings-50.png" alt="" srcset="">
+            </div>
+    </div> 
 
-        <div class="test-title">Մակարդակ 1</div>
 
-        <div class="timer-box">
+    <div class="box-window">        
+        <div class="start-box"></div>
+        <div class="start-box-title">Սկսել խաղը</div>
+        <button id="start-btn">Սկսել</button>
+    </div>
 
+    <div id="quiz-container">
+        <div class = "header">
+            <div class="test-title">Մակարդակ 1</div>
+            <div class="timer-box">
+            <div class="timer-back">
+                <div id="timer" class = "timer-title" >Մնաց <span id="time-left" class = "timer">0</span></div>
+            </div>
         </div>
         <hr class="first-hr">
 
-        <div class="questions">
-            <?php
-            include '../config.php';
-            global $conn; 
+        <div>
+            
+            <span id="progress-bar-bg"></span> <span class = "progress-percent">0%</span>
+            <span id="progress-bar"></span> 
 
-            $query = "SELECT * FROM questions";
-            $result = mysqli_query($con, $query);
-
-            if ($result) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $question = $row['question'];
-                    echo '<div class="question">' . $question . '</div>';
-                }
-            } else {
-                echo "Error: " . mysqli_error($con);
-            }
-
-            mysqli_close($con);
-            ?>
-        </div>
-
-        <div class="answers">
-            <?php
-            $answers = array('Answer1', 'Answer2', 'Answer3', 'Answer4');
-            $top = 10;
-            for ($i = 0; $i < count($answers); $i++) {
-                $answer = $answers[$i];
-                echo '<div class="answer answer' . ($i + 1) . '" name="answer' . ($i + 1) . '" style="margin-top: ' . $top . 'px;">' . $answer . '</div>';
-                $top += 80;
-            }
-            ?>
-        </div>
-
-
-
+            <br>
+            <div id="question"></div>
+            <div id="answers"></div>
         </div>
 
         <button class="next-btn">Հաջորդը</button>
         <div class="count-of-answers"></div>
         <button class="went-btn">Դուրս գալ</button>
 
-        <div class="box-window">
-    <div class="start-box"></div>
-    <div class="start-box-title">Սկսել խաղը</div>
-    <input type="submit" class="start-btn" value="Սկսել" name="start">
-</div>
+        
+    </div>
 
-    </form>
+    <div id="result-container" class="end-box-window" style = "display: none">
+        <div class="end-box"></div>
+        <p id="correct-count"></p>
+        <p id="wrong-count"></p>
+        <p id="percentage"></p>
+        <div class="end-min-title"></div>
+        <button class="end-start-btn">Սկսել նորից</button>
+        <button class="end-went-btn went-btn">Դուրս գալ</button>
+    </div>
 
-<script>
-
-let boxWindow = document.querySelector('.box-window');
-    let startBtn = document.querySelector('.start-btn');
-
-    let questionText = document.querySelector('.questions');
-    let answers = document.querySelectorAll('.answer');
-
-    // let questions = [
-    //     { number: 1, question: 'Sample question 1', options: ['Option A', 'Option B', 'Option C', 'Option D'] },
-    // ];
-
-    
-    startBtn.addEventListener('click', function(event) {
-            event.preventDefault(); 
-            boxWindow.style.display = 'none';
-
-            // questionText.innerText = questions[0].number + '. ' + questions[0].question;
-            // for (let i = 0; i < answers.length; i++) {
-            //     answers[i].innerText = questions[0].options[i];
-            // }
-        });
-
-       
-    
-</script>
-
-
-<script src="../functions.js"></script>
+    <script src="testing_page.js"></script>
+    <script src="../functions.js"></script>
+    <script src="../main/light-mode.js"></script>
 </body>
 </html>
