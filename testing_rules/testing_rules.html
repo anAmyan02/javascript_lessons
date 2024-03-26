@@ -10,7 +10,7 @@
 <body>
     <div class="nav">
         <img class="js-logo" src="../images/JS_logo.png" />
-            <a class="links" href="../main/main.html">Գլխավոր</a href="">
+            <a class="links" href="../main/index.php">Գլխավոր</a href="">
             <a class="links  main-page" style="left: 550px;" href="#">Թեստեր</a href="">
             <a class="links" style="left: 750px;" href="../about_us/about_us.html">Մեր մասին</a href="">
             <img class="earth-icon" src="../images/icons8-earth-50.png" />
@@ -18,6 +18,9 @@
             <div class="nav-line"></div>
             <div style="width: 36px; height: 39px; left: 1130px; top: 24px; position: absolute">
                 <img src="../images/icons8-search-30 (2).png" class="search-icon" alt="">
+            </div>
+            <div class = "mode">
+                <img src="../images/moon.png" class="sun-icon" alt="">
             </div>
             <div class="open-user"></div>
             <!-- user window open -->
@@ -41,9 +44,11 @@
             <ol>
                 <li>Դուք ունեք սահմանված ժամանակ յուրաքանչյուր հարցի համար,</li>
                 <li>Պատասխանն ընտրելուց հետո, պատասխանը փոխել հնարավոր չէ,</li>
+                <li><<Հաջորդը>> կոճակը կարող եք ընտրել միայն մեկ անգամ,</li>
                 <li>Դուք չէք կարող միարժամանակ ընտրել մի քանի ճիշտ պատասխան,</li>
                 <li>Յուրաքանչյուր հարցի համար ստանում եք միավոր,</li>
                 <li>Թեստավորման ընթացքում դուրս գալու դեպքում՝ միավորները կզրոյացվեն</li>
+
             </ol>
         </div>
         
@@ -53,11 +58,13 @@
             let goButton = document.querySelector('.go')
 
             goButton.addEventListener('click',()=>{
-                window.location.href = '../testing_page/testing_page.html'
+                window.location.href = '../testing_page/testing_page.php'
             })
         </script>
     </div>
     
     <script src="../functions.js"></script>
+    <script src="../main/light-mode.js"></script>
+
 </body>
 </html>
