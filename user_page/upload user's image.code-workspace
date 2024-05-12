@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../upload user's image"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Drag & Drop or Browse File"
+	}
+}
