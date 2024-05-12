@@ -47,17 +47,34 @@ searchIcon.addEventListener('click', () => {
 
 // ------------------------------------------- user window open-close --------------------------------------------
 
-let userWindow = document.querySelector('.user-window')
-userWindow.style.display = 'none'
+let userWindow = document.querySelector('.user-window');
+let OpenUserWindow = document.querySelector('.open-user');
 
-let OpenUserWindow = document.querySelector('.open-user')
-OpenUserWindow.addEventListener('click',()=>{
-    if(userWindow.style.display == 'none'){
-        userWindow.style.display = 'block'
-    }else{
-        userWindow.style.display = 'none'
+// Function to check if the click is outside of the user window
+function isClickOutsideUserWindow(event) {
+    if (!userWindow.contains(event.target) && !OpenUserWindow.contains(event.target)) {
+        userWindow.style.display = 'none';
+        document.removeEventListener('click', isClickOutsideUserWindow);
     }
-})
+}
+
+// Event listener for opening and closing the user window
+OpenUserWindow.addEventListener('click', (event) => {
+    if (userWindow.style.display === 'none') {
+        userWindow.style.display = 'block';
+        // Add event listener to handle clicks outside the user window
+        document.addEventListener('click', isClickOutsideUserWindow);
+    } else {
+        userWindow.style.display = 'none';
+        document.removeEventListener('click', isClickOutsideUserWindow);
+    }
+});
+
+
+
+// ------------------------------------------- user log out --------------------------------------------
+
+
 let logOut = document.querySelector('.log-out-user')
 logOut.addEventListener('click', ()=>{
     window.location.href = '../login/login.php'
@@ -65,10 +82,13 @@ logOut.addEventListener('click', ()=>{
 
 //-------------------------------------------- go to user page --------------------------------------------
 
-let userName = document.querySelector('.user-name')
-userName.addEventListener('click', ()=>{
-    window.location.href = '../user_page/user_page.php'
-})
+if(document.querySelector('.user-name')){
+    let userName = document.querySelector('.user-name')
+    userName.addEventListener('click', ()=>{
+        window.location.href = '../user_page/user_page.php'
+    })
+}
+
 
 //-------------------------------------------- search logic --------------------------------------------
 
@@ -76,44 +96,51 @@ userName.addEventListener('click', ()=>{
 // console.log(serachInput);
 
 
-const searchLogic = () => {
-    if(searchInput){
-        searchInput.addEventListener('onChange', () => {
+// const searchLogic = () => {
+//     if(searchInput){
+//         searchInput.addEventListener('onChange', () => {
                 
-        })
-    }
-}
+//         })
+//     }
+// }
 
 // --------------------------------- comments input is clicked ---------------------------------------------
 
-let commWrietBox = document.querySelector('.comments-write-box')
-let commentsInput = document.querySelector('.comments-input')
-
-commentsInput.addEventListener('click', () => {
-    let comBtn = document.querySelector('.com-btn')
-    comBtn.style.display = 'block'
-    let newCommentInputStyle = {
-        height: '90px',
-    };
-    let linksNewStyle = {
-        top: '60px'
-    };
-    let comHrStyle = {
-        position: 'absolute',
-        top: '100px',
-        left: '80px',
-        width: '600px'
-    };
-    Object.assign(commentsInput.style, newCommentInputStyle);
-    Object.assign(goodCom.style, linksNewStyle);
-    Object.assign(newCom.style, linksNewStyle);
-    Object.assign(oldCom.style, linksNewStyle);
-
-    commWrietBox.style.position = 'absolute';
-
+if(document.querySelector('.comments-write-box') &&  document.querySelector('.comments-input')){
+    let commWrietBox = document.querySelector('.comments-write-box')
+    let commentsInput = document.querySelector('.comments-input')
     
-    let comHr = document.createElement('hr');
-    commWrietBox.appendChild(comHr);
-    Object.assign(comHr.style, comHrStyle);
-});
+    commentsInput.addEventListener('click', () => {
+        let comBtn = document.querySelector('.com-btn')
+        comBtn.style.display = 'block'
+        let newCommentInputStyle = {
+            height: '90px',
+        };
+        let linksNewStyle = {
+            top: '60px'
+        };
+        let comHrStyle = {
+            position: 'absolute',
+            top: '100px',
+            left: '80px',
+            width: '600px'
+        };
+        Object.assign(commentsInput.style, newCommentInputStyle);
+        Object.assign(goodCom.style, linksNewStyle);
+        Object.assign(newCom.style, linksNewStyle);
+        Object.assign(oldCom.style, linksNewStyle);
+    
+        commWrietBox.style.position = 'absolute';
+    
+    });
+    
+}
 
+let heart = document.querySelector('.heart');
+
+function getHeartBit() {
+  heart.style.animation = 'heartbeat 1s infinite';
+}
+
+// Call the function to start the heartbeat animation
+getHeartBit();
