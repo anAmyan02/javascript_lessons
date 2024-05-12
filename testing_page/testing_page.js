@@ -74,9 +74,7 @@ function checkAnswer(selectedIndex, checkedButton) {
     const currentQuestion = questions[currentQuestionIndex];
 
     if (timeLeft === 0 || selectedIndex === -1 || !checkedButton) {
-        // No need to increment count here
     } else {
-        // Increment count when an answer is selected
         if (selectedIndex === currentQuestion.options.indexOf(currentQuestion.correct_answer)) {
             correctCount++;
             if (checkedButton.classList) {
@@ -135,7 +133,7 @@ function checkAnswer(selectedIndex, checkedButton) {
 
     // Start the timer
     function startTimer() {
-        timeLeft = 5;
+        timeLeft = 10;
         updateTimerDisplay();
         timer = setInterval(function() {
             timeLeft--;
@@ -172,4 +170,105 @@ function checkAnswer(selectedIndex, checkedButton) {
 
     
 });
+
+
+let coordinates = [
+    {
+        'top': '67vh',
+        'left': '4vh',
+        'transform': 'rotate(-37deg)',
+    },
+    {
+        'top': '64vh',
+        'left': '8vh',
+        'transform': 'rotate(-43deg)',
+    },
+    {
+        'top': '60vh',
+        'left': '12vh',
+        'transform': 'rotate(-37deg)',
+    },    
+    {
+        'top': '47vh',
+        'left': '28vh',
+        'transform': 'rotate(-37deg)',
+    },    
+    {
+        'top': '44vh',
+        'left': '32vh',
+        'transform': 'rotate(-32deg)',
+    },   
+    { 
+        'top': '41vh',
+        'left': '36vh',
+        'transform': 'rotate(-30deg)',
+    },
+    {    
+        'top': '39vh',
+        'left': '40.5vh',
+        'transform': 'rotate(-25deg)',
+    },   
+    { 
+        'top': '37vh',
+        'left': '44.5vh',
+        'transform': 'rotate(-15deg)',
+    },   
+    { 
+        'top': '37vh',
+        'left': '49vh',
+        'transform': 'rotate(10deg)',
+    },    
+    {
+        'top': '38vh',
+        'left': '54vh',
+        'transform': 'rotate(-2deg)',
+    },
+    {
+        'top': '30vh',
+        'left': '69vh',
+        'transform': 'rotate(5deg)',
+    },
+    {
+        'top': '32vh',
+        'left': '74vh',
+        'transform': 'rotate(35deg)',
+    },
+    {
+        'top': '36vh',
+        'left': '78vh',
+        'transform': 'rotate(49deg)',
+    },
+    {
+        'top': '41vh',
+        'left': '81vh',
+        'transform': 'rotate(56deg)',
+    },
+    {
+        'top': '46vh',
+        'left': '84vh',
+        'transform': 'rotate(60deg)',
+    },
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+    let lineContainer = document.querySelector('.line-container'); 
+    
+    coordinates.forEach((coordinate) => {
+        let level = document.createElement('div');
+        level.className = 'line';
+        level.style.top = coordinate.top;
+        level.style.left = coordinate.left;
+        level.style.transform = coordinate.transform;
+        lineContainer.appendChild(level);
+    });
+    
+    document.body.appendChild(lineContainer);
+
+});
+
+let gamerBox = document.querySelector('.gamer-box');
+let gamer = document.createElement('img');
+gamer.src = '../images/lesson-page/game-removeb.png';
+gamer.className = "gamer";
+gamerBox.appendChild(gamer);
 

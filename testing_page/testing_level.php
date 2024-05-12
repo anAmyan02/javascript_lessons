@@ -1,10 +1,10 @@
 <?php
-session_start(); 
+// session_start(); 
 
-if(!isset($_SESSION['username'])) {
-    header("Location: ../login/login.php");
-    exit;
-}
+// if(!isset($_SESSION['username'])) {
+//     header("Location: ../login/login.php");
+//     exit;
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +15,8 @@ if(!isset($_SESSION['username'])) {
     <title>testing</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="testing_page.css">
+
+
 </head>
 <body>
 <div class="nav">
@@ -42,52 +44,28 @@ if(!isset($_SESSION['username'])) {
                 <button class="log-out-user">Դուրս գալ</button>
                 <i class="fa-solid fa-gears settings-icon" style="color: #ffffff;"></i>
             </div>
-                   
     </div>  
-
-
-    <div class="box-window">        
-        <div class="start-box"></div>
-        <div class="start-box-title">Սկսել խաղը</div>
-        <button id="start-btn">Սկսել</button>
-    </div>
 
     <div id="quiz-container">
         <div class = "header">
-            <div class="test-title">Մակարդակ 1</div>
-            <div class="timer-box">
-            <div class="timer-back">
-                <div id="timer" class = "timer-title" >Մնաց <span id="time-left" class = "timer">0</span></div>
-            </div>
+        <div class="test-title">
         </div>
-        <hr class="first-hr">
-
-        <div>
-            
-            <span id="progress-bar-bg"></span> <span class = "progress-percent">0%</span>
-            <span id="progress-bar"></span> 
-
-            <br>
-            <div id="question"></div>
-            <div id="answers"></div>
-        </div>
-
-        <button class="next-btn">Հաջորդը</button>
-        <div class="count-of-answers"></div>
-        <button class="went-btn">Դուրս գալ</button>
-
-        
+        <hr class="first-hr">        
     </div>
 
-    <div id="result-container" class="end-box-window" style = "display: none">
-        <div class="end-box"></div>
-        <p id="correct-count"></p>
-        <p id="wrong-count"></p>
-        <p id="percentage"></p>
-        <div class="end-min-title"></div>
-        <button class="end-start-btn">Սկսել նորից</button>
-        <button class="end-went-btn went-btn">Դուրս գալ</button>
+    <div class="way line-container"></div>
+    <div class="gamer-box"></div>
+    <div class="first-level level">
+        <p>Փուլ 1</p><br>
+        <i class="fa-brands fa-fort-awesome castle" style="color: #B197FC;"></i>
     </div>
+    <div class="second-level level">
+        <p>Փուլ 2</p><br>
+        <i class="fa-brands fa-fort-awesome castle"></i>
+    </div>
+    <div class="third-level level">
+        <p>Փուլ 3</p><br>
+        <i class="fa-brands fa-fort-awesome castle" style="color: #FFD43B;"></i>
 
     <script src="testing_page.js"></script>
     <script src="../functions.js"></script>
