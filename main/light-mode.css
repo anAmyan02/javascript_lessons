@@ -1,4 +1,7 @@
 /* light-mode.css */
+body{
+    background-color: aliceblue;
+}
 .back-img {
     filter: brightness(100%);
 }

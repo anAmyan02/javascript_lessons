@@ -12,20 +12,21 @@ if(!isset($_SESSION['username'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yourJS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="main.css">
 </head>
-<body >
+<body>
     <div class="nav">
         <img class="js-logo" src="../images/JS_logo.png" />
             <a class="links main-page" href="">Գլխավոր</a href=""> 
-            <a class="links" style="left: 550px;" href="../testing_rules/testing_rules.html ">Թեստեր</a href="">
-            <a class="links" style="left: 750px;" href="../about_us/about_us.html">Մեր մասին</a href="">
+            <a class="links" style="left: 550px;" href="../testing_rules/testing_rules.php ">Թեստեր</a href="">
+            <a class="links" style="left: 750px;" href="../about_us/about_us.php">Մեր մասին</a href="">
             <img class="earth-icon" src="../images/icons8-earth-50.png" />
             <div class="earth-text">AM</div>
             <div class="nav-line"></div>
             <div style="width: 36px; height: 39px; left: 1130px; top: 24px; position: absolute">
-                <img src="../images/icons8-search-30 (2).png" class="search-icon" alt="">
+                <i class="fa-solid fa-magnifying-glass search-icon" style="color: #fafafa;"></i>
             </div>
             <div class = "mode">
                 <img src="../images/moon.png" class="sun-icon" alt="">
@@ -35,39 +36,39 @@ if(!isset($_SESSION['username'])) {
                 <textarea class="message" name="message" id="" cols="30" rows="6" placeholder="ինչն է ձեզ անհանգստացնում..."></textarea><br>        
                 <input type="submit" value="Ուղակել" class="statistic_btn" name="statistic_btn">
             </form>
-            <?php 
+            <?php
                 session_start();
-                include '../config.php'; 
+                include '../config.php';
 
-                global $conn; 
-
-                if(isset($_POST['statistic_btn'])){
-                    $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
-                    $message = isset($_POST['message']) ? $_POST['message'] : "";
+                if(isset($_SESSION['username']) && isset($_POST['statistic_btn'])){
+                    $username = $_SESSION['username'];
+                    $message = isset($_POST['message']) ? mysqli_real_escape_string($conn, $_POST['message']) : "";
+                    $current_time = date('Y-m-d H:i:s');
 
                     if($message !== ""){
-                        $sql = "INSERT INTO `users_message`(`username`, `message`) VALUES ('$username','$message')";
-
-                        if (!mysqli_query($conn, $sql)) { 
-                            echo "Error inserting records: " . mysqli_error($conn); 
-                            exit;
-                        } else { 
-                            
-                            header("Location: ../main/index.php");
-                        } 
-                    }
-                }
-            ?>
+                        $sql = "INSERT INTO `users_message`(`username`, `message`, `current_time`) VALUES ('$username','$message', '$current_time')";
             
-            <div class="open-user"></div>
+                        if (!mysqli_query($conn, $sql)) {
+                            echo "Error inserting records: " . mysqli_error($conn);
+                            exit;
+                        } else {
+                            header("Location: ../main/index.php");
+                            exit;
+                        }
+                    }
+                } 
+            ?>
+
+            <div class = "open-user"><i class="fa-regular fa-user" style="color: #fcfcfc;"></i></div>
             <!-- user window open -->
-            <div class="user-window">
+            <div class="user-window" style = "display: none">
                 <img class="tringle-icon" src="../images/icons8-triangle-40.png" alt="" srcset="">
-                <img class="user-icon" src="../images/male_user.png" alt="" srcset="">
+                <div class = "user"><i class="fa-regular fa-user" style="color: #fcfcfc;"></i></div>
+
                 <p class="user-name"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?></p>
                 <span>120 <img src="../images/icons8-star-96.png" alt="" srcset=""></span>
                 <button class="log-out-user">Դուրս գալ</button>
-                <img class="settings-icon" src="../images/icons8-settings-50.png" alt="" srcset="">
+                <i class="fa-solid fa-gears settings-icon" style="color: #ffffff;"></i>
             </div>
                    
     </div>  
@@ -76,9 +77,12 @@ if(!isset($_SESSION['username'])) {
     <div class="main-content">
 
         <div class="content">
-            <img class="main-image back-img" src="../images/main/figmabg2.jpg" alt="Background Image">
+        <div class="background-slide">
+            <img class="main-image back-img photo1" src="../images/main/figmabg2.jpg" alt="Background Image">
+            <img class="main-image photo2" src="../images/photo2.png" alt="Background Image">
+            <img class="main-image photo3" src="../images/photo3.jpeg" alt="Background Image">
         </div>
-
+        </div>
         <div class="logo-container">
             <div class="logo-background">
                 <div class="background-overlay"></div>
@@ -137,7 +141,6 @@ if(!isset($_SESSION['username'])) {
         </div>
         <div class="content-container">
        
-       
        <?php
             include '../config.php';
 
@@ -152,7 +155,7 @@ if(!isset($_SESSION['username'])) {
 
             foreach ($titles1 as $index => $title) {
                 $dynamicContainer = '<div>';
-                $leftPosition = ($index % $containersPerRow) * ($containerWidth + $spacing);
+                $leftPosition = ($index % $containersPerRow) * ($containerWidth + $spacing) - 10;
                 $topPosition = floor($index / $containersPerRow) * ($containerHeight + $spacing);
 
                 $dynamicContainer .= '<div class="lesson-title" style="width: ' . $containerWidthForTitle . 'px;  left: ' . $leftPosition . 'px; top: ' . $topPosition . 'px; ">' . $title . '</div>';
@@ -234,15 +237,99 @@ if(!isset($_SESSION['username'])) {
         </div>
     </div>
     
-    <div style="width: 100%; height: 100%; position: relative; opacity: 0.70; top: 2500px;">
-        <div class="second-content-container"></div>
+    <div style="width: 100%; height: 100%; position: relative; opacity: 0.70; top: 2550px; left:2.5%">
+        <div class="second-content-container">
+            <?php
+                include '../config.php';
+
+                $containersPerRow = 4;
+                $containerWidth = 300;
+                $containerWidthForTitle = 315;
+                $containerHeight = 520;
+                $spacing = 20;
+                $boxCount = 0;
+                $titles1 = ['Document', ' հիմունքներ', 'Կոդի որակ', 'Օբյեքդներ՝ հիմունքներ', 'Տվյալների տիպեր','Այլ'];
+                $lessonBoxes = [];
+
+                foreach ($titles1 as $index => $title) {
+                    $dynamicContainer = '<div>';
+                    $leftPosition = ($index % $containersPerRow) * ($containerWidth + $spacing) - 10;
+                    $topPosition = floor($index / $containersPerRow) * ($containerHeight + $spacing);
+
+                    $dynamicContainer .= '<div class="lesson-title" style="width: ' . $containerWidthForTitle . 'px;  left: ' . $leftPosition . 'px; top: ' . $topPosition . 'px; ">' . $title . '</div>';
+
+                    $dynamicContainer .= '</div>';
+                    echo $dynamicContainer;
+                }
+
+                $sql = "SELECT title, chapter FROM lessons_title_chapter2 ORDER BY id"; 
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    $titles = [];
+                    while ($row = $result->fetch_assoc()) {
+                        $titles[] = $row;
+                    }
+
+                    $currentChapter = explode('.', $titles[0]['chapter'])[0];
+                    $lessonTitles = [];
+                    foreach ($titles as $titleInfo) {
+                        $chapter = explode('.', $titleInfo['chapter'])[0]; 
+                        if ($chapter !== $currentChapter) {
+                            $lessonBoxes[] = ['chapter' => $currentChapter, 'titles' => $lessonTitles];
+                            $lessonTitles = [];
+                            $currentChapter = $chapter;
+                        }
+                        $lessonTitles[] = $titleInfo['title'];
+                    }
+                    $lessonBoxes[] = ['chapter' => $currentChapter, 'titles' => $lessonTitles];
+                    $topPositionForBox = 90;
+                    foreach ($lessonBoxes as $lessonBoxIndex => $lessonBox) {
+                        if ($lessonBoxIndex % $containersPerRow === 0) {
+                            echo "<div class='container' style='display:flex'>";
+                        }
+                        $dynamicContainer = '<div class="lesson-box" style="width: ' . $containerWidth . 'px; top:' . $topPositionForBox . 'px;">';
+                        if (count($lessonBox['titles']) > 5) { 
+                            $dynamicContainer .= '<div class="titles-container">'; 
+                        }
+                        $textTop = 60;
+                        foreach ($lessonBox['titles'] as $lessonTitle) {
+                            $lessonChapter = '';
+                            foreach ($titles as $titleInfo) {
+                                if ($titleInfo['title'] === $lessonTitle) {
+                                    $lessonChapter = $titleInfo['chapter'];
+                                    break;
+                                }
+                            }
+                            $dynamicContainer .= '<div style="margin:20px; margin-top: 10px; ">' . $lessonChapter . ' ' .'<a href="../lessons/lesson_page.php" class = "lessonTitle">' . $lessonTitle . '</a>'. '</div>';
+                            $dynamicContainer .= '<div style="width: 280px; height: 0px; left: 16.41px; border: 1px #FFE7AA solid"></div>'; 
+                            $textTop += 50;
+                        }
+                        
+                        
+                        if (count($lessonBox['titles']) > 5) { 
+                            $dynamicContainer .= '</div>';
+                        }
+                        $boxCount++;
+                        $dynamicContainer .= '</div>';
+                        echo $dynamicContainer;
+                        if (($boxCount % $containersPerRow === 0) || ($lessonBoxIndex === count($lessonBoxes) - 1)) {
+                            echo "</div>"; 
+                        }
+                    }
+                }
+
+                $conn->close();
+            ?>
+
+        
+    </div>
 
         <!-- part 2 end -->
 
         <!-- parդ 3 start -->
-        <div style="width: 1402px; height: 202px; left: 0px; top: 1207px; position: absolute" id="third-part">
+        <div style="width: 1300px; height: 202px; left: 0px; top: 1207px; position: absolute" id="third-part">
             <div class = "third-part box"></div>
-            <div style="width: 824px; left: 28px; top: 40px; position: absolute">
+            <div style="width: 800px; left: 180px; top: 40px; position: absolute">
                 <span style="color: white; font-size: 32px; font-family: Noto Sans Armenian; font-weight: 400; word-wrap: break-word">Թեստեր<br/></span>
                 <span style="color: white; font-size: 24px; font-family: Noto Sans Armenian; font-weight: 400; word-wrap: break-word">
                     Այս բաժնում դուք կարող եք ստուգել ձեր JavaScript-ի գիտելիքները:
@@ -255,10 +342,11 @@ if(!isset($_SESSION['username'])) {
         <!-- part 3 end -->
     </div>
 
-    <div style="width: 100%; height: 100%; position: relative">
-        <div style="width: 100%; height: 198.81px;top: 4000px; left:20%; position: absolute;">
+    <div style="width: 100%; height: 100%; position: relative; top:-100px">
+        <div style="width: 100%; height: 198.81px;top: 3000px; left:20%; position: absolute;">
             <div>
-                <img src="../images/icons8-comments-80.png" alt="" srcset="" style="width: 30px; height: 30px;">
+            <i class="fa-solid fa-comment-dots" ></i>
+                <!-- <img src="../images/icons8-comments-80.png" alt="" srcset="" style="width: 30px; height: 30px;"> -->
             </div>
 
             <div class = "comments-write-box">
@@ -271,8 +359,18 @@ if(!isset($_SESSION['username'])) {
 
         </div>
         
-        <!-- <div class = "hover-div"></div> -->
         <p class="before-comments">Գրելուց առաջ...</p>
+        <div class = "comments-rules" style = "display:none">
+            <div class = "hover-div-bg"></div>
+            <div class="hover-div">
+                <ul style="">
+                    <li>Կոդի մեկ տողի համար օգտագործեք &lt;code&gt; թեգը, <br>կոդի մի քանի տողերի համար օգտագործեք &lt;pre&gt;<br> թեգը</li><br>
+                    <li>Եթե հոդվածում ինչ-որ բան անհասկանալի է, գրեք կոնկրետ ինչ և որտեղից:</li>
+                </ul>
+                <img class="hover-img" style="" src="../images/main/tringle.png" />
+            </div>
+        </div>
+        
         
             <div class="comments-box">
                 <div class="comments-title">Մեկնաբանություններ </div>
@@ -280,7 +378,7 @@ if(!isset($_SESSION['username'])) {
                 <?php 
                         include '../config.php';
 
-                        $sql = "SELECT COUNT(id) AS count FROM comments"; // Corrected SQL query
+                        $sql = "SELECT COUNT(id) AS count FROM comments"; 
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
@@ -296,38 +394,73 @@ if(!isset($_SESSION['username'])) {
             </div>
     </div>
 
-    <div class="comm-container">
+    <div class="comm-box" style="position:absolute; top:5250px; margin-bottom:30vh">
     <?php 
     include '../config.php';
 
-    $sql = "SELECT * FROM comments ORDER BY id DESC";
-    $result = $conn->query($sql);
+    if (isset($_POST['add'])) {
+        $sql = "SELECT * FROM comments ORDER BY id DESC";
+    } else {
+        $sql = "SELECT * FROM comments ORDER BY id DESC LIMIT 4";
+    }
 
+    $result = $conn->query($sql);
+    
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo '<div class="comment-container">' .
-            '<span class="com-username">' . $row["username"] . '</span>' . 
-            '<div class="comment-details">' .
-                '<div class="com-time">' . $row["com_time"] . '</div>' .
-                '<div class="com-comment">' . $row["comment"] . '</div>' . 
-            '</div>' . 
-            '<div class="likes-box">' .
-                '<div class="like-container" data-comment-id="' . $row["id"] . '">' .
-                '<img class="likes like-button" src="../images/main/like.png" alt="" srcset="" data-liked="0">' .
-                '<span class="like-count">' . $row["com_likes"] . '</span>' .
-            '</div>' .
-            '</div>' .
-            '</div>' . 
-            '<br>';
+            echo '<div class="comment-container" style="">' .
+                    '<span class="com-username">' . $row["username"] . '</span>' . 
+                    '<div class="comment-details">' .
+                        '<div class="com-time">' . $row["com_time"] . '</div>' .
+                        '<div class="com-comment">' . $row["comment"] . '</div>' . 
+                    '</div>' . 
+                    '<div class="likes-box">' .
+                        '<div class="like-container" data-comment-id="' . $row["id"] . '">' .
+                        '<img class="likes like-button" src="../images/main/like.png" alt="" srcset="" data-liked="0">' .
+                        '<span class="like-count">' . $row["com_likes"] . '</span>' .
+                    '</div>' .
+                    '</div>' .
+                '</div>' . 
+                '<br>';
         }
     } else {
         echo "0 results";
     }
     $conn->close();
-    ?>
+?>
+<form method="POST">
+    <input type="submit" name="add" class="see-more-btn" value="Տեսնել ավելին">
+    <input type="hidden" name="add" value="">
+</form>
 </div>
 
 
+<footer>
+    <div class = "footer-box">
+        <hr>
+        <div>
+            <span>Մեր մասին</span>
+            <p>Կոնտակտ</p>
+            <p>Պայմաններ</p>
+
+        </div>
+        <hr>
+        <div>
+            <span>Կուրսեր</span>
+            <p>Ծրագրավորում</p>
+        </div>
+        <hr>
+    </div>
+    <hr class = "second-hr">
+    <div class="brands">
+        <div><i class="fa-brands fa-instagram profile"></i></div>
+        <div><i class="fa-brands fa-facebook profile"></i></div>
+        <div><i class="fa-brands fa-youtube profile"></i></div>
+    </div>
+    <hr class = "second-hr">
+    <p style = "color: #8d8c8c">&copy 2023 - 2024 YourJS</p>
+    <p style = "color: #8d8c8c"> created with <i class="fa-solid fa-heart heart" style="color: #ff0000;"></i>  by Anahit Amyan</p>
+</footer>
 <script>
    document.addEventListener('DOMContentLoaded', function() {
     const likeButtons = document.querySelectorAll('.like-button');
@@ -402,7 +535,7 @@ if(!isset($_SESSION['username'])) {
 
 
 
-
+<!--  -->
 
     
     <script src="main.js"></script>

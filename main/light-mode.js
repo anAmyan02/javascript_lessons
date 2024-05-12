@@ -1,5 +1,10 @@
 // Function to apply light mode styles
+
+console.log('hiii');
+
 const applyLightModeStyles = () => {
+    document.querySelector('.photo2').src = '../images/light-mode/back1.jpeg'; // Reset src attribute of .photo2
+    document.querySelector('.photo3').src = '../images/light-mode/back1.jpeg';
     document.querySelector('.sun-icon').src = "../images/sun.png";
 
     document.querySelectorAll('.back-img').length > 0  && 
